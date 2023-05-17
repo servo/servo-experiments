@@ -1,5 +1,6 @@
-#[servo-experiments](https://mozdevs.github.io/servo-experiments)
-#####A collection of experiments for Servo.  [Get Servo Nightly](https://servo-builds.s3.amazonaws.com/index.html).
+Servo-experiments
+
+A collection of experiments for Servo.  [Get Servo Nightly](https://servo-builds.s3.amazonaws.com/index.html).
 
 These demos aim to show off Servo's rendering capabilities.
 
