@@ -1,0 +1,96 @@
+body {
+    background-color: #FAFAFA;
+
+}
+
+.servo-stats {
+    font-family: Helvetica, sans;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    background: #666;
+    color: #fff;
+    display: inline-block;
+    z-index: 1000;
+}
+
+.servo-stats li {
+    list-style: none;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.controlBar {
+    position: fixed;
+    top: 46vh;
+    left: 30vw;
+    width: 40vw;
+    height: 4vh;
+    box-shadow: 3px 3px 3px #888888;
+    display: block;
+    border: 2px solid #2A52Be;
+    color: #383838;
+    z-index: 1000;
+}
+
+.floatingImg {
+    margin: 0;
+    padding: 0;
+    box-shadow: 3px 3px 3px #888888;
+    color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 10px;
+    overflow: scroll;
+}
+
+#cardTemplate {
+    visibility: hidden
+}
+
+.card {
+    height: 40vh;
+    margin-right: 0.4vw;
+    margin-left: 0.4vw;
+    margin-top: 0.4vw;
+    margin-bottom: 0.4vw;
+    float: left;
+}
+
+.mdl-card__title {
+    color: #fff;
+    background-color: #46B6AC;
+    font-size:500pt;
+}
+
+.card-text {
+    /*height: 40%;*/
+}
+
+iframe {
+    width: 40vw;
+    height: 60vh;
+    position: fixed;
+    top: 20vh;
+    left: 30vw;
+    z-index: 999;
+}
+
+.card .mdl-card__media {
+    background: none;
+    text-align: center;
+}
+
+.notificationBar {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    z-index: 999;
+    color: white;
+    text-align: center;
+    opacity: 0.9;
+    background-color: #3D3D3D;
+}

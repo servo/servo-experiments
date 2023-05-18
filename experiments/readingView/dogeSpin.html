@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Doge Spin</title>
+  <style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    img {
+        margin-top: 6px;
+        transition: 2s linear all;
+    }
+  </style>
+  <script>
+    window.addEventListener('load', function() {
+        var img = document.querySelector('img');
+        var transitionTime = 2000,
+            rot = 180,
+            dir = 1;
+
+        spin();
+        setInterval(spin, transitionTime);
+        
+        function spin() {
+            img.style.transform = 'rotate(' + rot + 'deg)';
+            rot += 180 * dir;
+            if (rot === 0 || (rot / 360) === 20) {
+                dir *= -1;
+            }
+        }
+    });
+  </script>
+</head>
+
+<body>
+    <img src="doge.png" width="64" />
+</body>
+</html>

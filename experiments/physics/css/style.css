@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FAFAFA;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.help {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 430px;
+    height: 200px;
+    margin-left: -215px;
+    margin-top: -100px;
+
+    padding: 10px;
+
+    font-family: Helvetica, sans;
+    font-size: 200%;
+    
+    color: #BDBDBD;
+    border: 1px dashed rgba(0,0,0, 0.2);
+}
+
+.servo-stats {
+    font-family: Helvetica, sans;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    background: #666;
+    color: #fff;
+    display: inline-block;
+    z-index: 1000;
+}
+
+.servo-stats li {
+    list-style: none;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.PIFrame {
+    width: 40vw;
+    height: 60vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    border: none;
+}

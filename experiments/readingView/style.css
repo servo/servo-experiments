@@ -1,0 +1,126 @@
+  body {
+        font-family: georgia;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    #readingViewButton {
+        position: fixed;
+        top: 5px;
+        left: 5px;
+        background-color: #383838;
+        padding: 10px;
+        padding-bottom: 6px;
+        color: white;
+        opacity: 0.8;
+        cursor: pointer;
+        border-bottom: 4px solid #383838;
+        z-index: 999;
+    }
+
+    #readingViewButton:hover {
+        border-bottom: 4px solid #365CB5;
+    }
+
+    .layer {
+        position: absolute;
+        top: 0;
+        left: 30%;
+        width: 40%;
+    }
+
+    .reading {
+        font-size: 120%;
+    }
+
+    #container {
+        padding-left: 10px;
+        width: 60%;
+        margin: auto;
+    }
+
+    .main-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        text-align: center;
+        z-index: 998;
+    }
+    .main-header-inner {
+        width: 60%;
+        margin: auto;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #C9C9C9;
+    }
+
+    .main-header h1 {
+        font-size: 300%;
+        letter-spacing: -0.05em;
+        word-break: break-all;
+    }
+  
+    .main-header .logo {
+        position: relative;
+        top: 14px;
+        margin: 0;
+        padding: 0;
+        border: none;
+        overflow: none;
+    }
+    .main-content {
+        margin-top: 200px;
+    }
+
+    .top-main-ad {
+        width: 600px;
+        margin: auto;
+    }
+   
+    #container nav {
+        word-spacing: 300%;
+    }
+
+    #container nav a {
+        word-spacing: initial;
+        text-decoration: none;
+        color: #365CB5;
+    }
+
+    #container nav a:hover {
+        color: #c10a15;
+    }
+
+    .ad {
+        transition: 0.5s opacity ease-in-out;
+        text-align: center;
+        margin: 10px;
+    }
+
+    #container .center {
+        text-align: center;
+    }
+
+    .v-ad {
+        float: left;
+        margin-top: 0;
+    }
+
+    .v-ad .v-ad-img {
+        margin-top: 0;
+    }
+
+    .copy {
+    }
+
+    #container h1, h2, h3, h4, h5, h6 {
+    }
+    #container p {
+       margin: 0;
+       padding: 0;
+    }
+    #container iframe {
+        border: none;
+    }

@@ -2,6 +2,11 @@
     "experiments": [
 
         {
+            "name": "Servo Bookshelf",
+            "desc": "<p>Interactive animated bookshelf.  This experiment shows how Servo can easily handle multiple IFrames which are changing size.</p><p>Servo is able to smoothly reflow the page and render the IFrames when their 'width' property is undergoing a CSS transition.</p>",
+            "href": "experiments/bookshelf/"
+        },
+        {
             "name": "DIVMosaics",
             "desc": "<p>Mosaic effect using DIV's</p>",
             "href": "experiments/divMosaics/",
@@ -18,6 +23,11 @@
             "desc": "<p>Animated rain effect using DIVs.</p>",
             "href": "experiments/swirly/",
             "long_description":""
+        },
+        {
+            "name": "Reading View (WIP)",
+            "desc": "<p>Smoothly transforms a busy web page into a simplified view for easy reading.</p><p>CSS 3D transitions are used to remove the ads and other excess elements from the page, leaving just the article.</p>",
+            "href": "experiments/readingView/"
         },
         {
             "name": "DIV Waves",

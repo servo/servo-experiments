@@ -1,0 +1,66 @@
+<!doctype html>
+
+<head>
+<meta charset="utf-8">
+<script src="../../js/libs/underscore.js"></script>
+
+<style>
+body {
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	background-color: #333333;
+	font-family: arial;
+}
+
+#demo {
+	width: 100vw
+	margin: auto;
+}
+
+.widget {
+	height: 200px;
+	transition: transform 0.25s ease;
+}
+
+.widget:hover {
+}
+
+.widget * {
+	width: 100%;
+	height: 100%;
+}
+
+.widget p {
+	overflow: scroll;
+	background-color: #cccccc;
+	padding: 10px;
+}
+
+iframe {
+	border: none;
+	pointer-events: none;
+}
+
+</style>
+<link rel="stylesheet" type="text/css" href="grid.css" />
+<script src="../../js/libs/tweenLib.js"></script>
+<script src="bower_components/gifuct-js/dist/gifuct-js.js"></script>
+<script src="js/GifCanvas.js"></script>
+
+<script src="js/fireCanvas.js"></script>
+<script src="js/CanvasDisplay.js"></script>
+<script src="js/Widget.js"></script>
+
+<script src="js/main.js"></script>
+
+</head>
+
+<body>
+<div id="demo" class="grid">
+
+</div>
+
+</body>
+
+</html>
