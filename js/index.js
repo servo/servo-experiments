@@ -13,7 +13,6 @@ Http.get = function(url, cb) {
 
 window.addEventListener('load', function() {
     Http.get('experiments.json', function(data) {
-        addExperiments(document.querySelector('#featured-experiments .experiment-previews'), data.featured, true);
         addExperiments(document.querySelector('#other-experiments .experiment-previews'), data.experiments, true);
         addExperiments(document.querySelector('#technical-tests .experiment-previews'), data.tests, true);
     });
