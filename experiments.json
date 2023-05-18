@@ -1,11 +1,6 @@
 {
     "featured": [
         {
-            "name": "Servo Bookshelf",
-            "desc": "<p>Interactive animated bookshelf.  This experiment shows how Servo can easily handle multiple IFrames which are changing size.</p><p>Servo is able to smoothly reflow the page and render the IFrames when their 'width' property is undergoing a CSS transition.</p>",
-            "href": "experiments/bookshelf/"
-        },
-        {
             "name": "DIVMosaics",
             "desc": "<p>Displays images in a mosaic effect using multiple DIV's as the mosaic tiles.  Each mosaic tile is animated using transtions on the top and left properties.</p><p>The mosaic effect shows Servo's ability to deal with many DOM elements aswell as their transitions.  The transitions in particular perform very well in Servo thanks to the hardware acceleration provided by Servo's rendering engine, WebRender.</p>",
             "href": "experiments/divMosaics/"
@@ -23,24 +18,9 @@
             "href": "experiments/swirly/"
         },
         {
-            "name": "Reading View (WIP)",
-            "desc": "<p>Smoothly transforms a busy web page into a simplified view for easy reading.</p><p>CSS 3D transitions are used to remove the ads and other excess elements from the page, leaving just the article.</p>",
-            "href": "experiments/readingView/"
-        },
-        {
             "name": "DIV Waves",
             "desc": "<p>Animated wave effect using DIVs.</p>",
             "href": "experiments/divWaves/"
-        },
-        {
-            "name": "IFrame Physics",
-            "desc": "<p>IFrames attached to the p2.js physics engine.</p>",
-            "href": "experiments/physics/"
-        },
-        {
-            "name": "Duck Duck Servo",
-            "desc": "<p>An animated interface for duckDuckGo queries.</p>",
-            "href": "experiments/duckDuckServo/"
         }
     ],
     "tests": [
@@ -48,16 +28,6 @@
             "name": "Dogemania Benchmark",
             "desc": "<p>Benchmark your browser with Doges.</p>",
             "href": "experiments/dogemania/"
-        },
-        {
-            "name": "Testing CSS transformations",
-            "desc": "<p>Repeatedly transform a series of elements to test the various transformations.</p>",
-            "href": "experiments/test-transformations/"
-        },
-        {
-            "name": "Testing CSS filters",
-            "desc": "<p>Repeatedly apply a filter to a series of elements to test the various CSS filters.</p>",
-            "href": "experiments/test-filters/"
         }
     ]
 
