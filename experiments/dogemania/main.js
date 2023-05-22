@@ -10,7 +10,7 @@ window.onload = function() {
 	var graphSkipCount = 1; // Used so we don't plot on the graph every single frame
 	var graphPlotFrequency = 1; // Plot every 20 frames
 
-	var imageURL = 'servo.png';
+	var imageURL = 'servo-doge.png';
 	var imageWidth = 512;
 	var imageHeight = 512;
 	var imageCounter = 0;

@@ -1,129 +1,127 @@
-        * {
-            box-sizing: border-box;
-        }
+* {
+  box-sizing: border-box;
+}
 
-        @font-face {
-            font-family: lintel;
-            src: local(lintel) url(css/lintel.otf);
-        }
+@font-face {
+  font-family: lintel;
+  src: local(lintel) url(css/lintel.otf);
+}
 
-        body {
-            font-family: lintel, helvetica; /* TODO: Add lintel.otf and reference here */
-            margin: 0;
-            padding: 0;
-            /*overflow-x: hidden;*/
-        }
+body {
+  font-family: lintel, helvetica; /* TODO: Add lintel.otf and reference here */
+  margin: 0;
+  padding: 0;
+  /*overflow-x: hidden;*/
+}
 
-        #container {
-            width: 90vw;
-            margin: auto;
-        }
+#container {
+  width: 90vw;
+  margin: auto;
+}
 
-        #mainHeader {
-            margin: auto;
-            text-align: center;
-            font-family: lintel, helvetica;
-        }
+#mainHeader {
+  margin: auto;
+  text-align: center;
+  font-family: lintel, helvetica;
+}
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: lighter;
+  text-align: center;
+}
 
-        h1, h2, h3, h4, h5, h6 {
-            margin: 0;
-            font-weight: lighter;
-        }
+.header-inner {
+  min-width: 320px;
+  max-width: 540px;
+  margin: auto;
+}
 
-        .header-inner {
-            min-width: 320px;
-            max-width: 540px;
-            margin: auto;
-        }
+.header-logo {
+  text-align: center;
+  margin-top: 0.2em;
+}
 
-        .header-logo {
-            float: left;
-            margin-top:0.2em;
-        }
+.header-main {
+  font-size: 150%;
+}
 
-        .header-main {
-            font-size:150%;
-        }
+.header-tagline {
+  color: #696969;
+}
 
-        .header-tagline {
-            color: #696969;
-        }
+.download-link a {
+  color: #365cb5;
+  text-decoration: none;
+}
 
-        .experiments-container {
-        }
+.download-link a:hover {
+  text-decoration: underline;
+}
 
-        .download-link a {
-            color: #365Cb5;
-            text-decoration: none;
-        }
+.experiments-group {
+  margin: auto;
+  margin-top: 10px;
+  width: 100%;
+  clear: both;
+}
+.experiment-previews {
+  text-align: left;
+  clear: both;
+}
 
-        .download-link a:hover {
-            text-decoration: underline;
-        }
+.experiment-preview {
+  display: inline-block;
+  padding: 20px;
+  margin: 20px;
+  transition: opacity 0.5s ease-in-out, background-color 0.25s ease-in-out;
+  text-align: center;
+  box-shadow: 3px 3px 5px #7c7c7c;
+  background-color: #dceff6;
+}
 
-        .experiments-group {
-            margin: auto;
-            margin-top: 10px;
-            width: 100%;
-            clear: both;
-        }
-        .experiment-previews {
-             text-align: left;
-             clear: both;
-        }
-      
-        .experiment-preview {
-            display: inline-block;
-            padding: 20px;
-            margin: 20px;
-            transition: opacity 0.5s ease-in-out, background-color 0.25s ease-in-out;
-            text-align: center;
-            box-shadow: 3px 3px 5px #7C7C7C;
-            float: left;
-        }
+.experiment-preview a {
+  text-decoration: none;
+  color: initial;
+}
+.experiment-preview h2 {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
 
-        .experiment-preview a {
-            text-decoration: none;
-            color: initial;
-        }
-        .experiment-preview h2 {
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
+.experiment-preview:hover {
+  background-color: #a4e6ff;
+}
 
-        .experiment-preview:hover {
-            background-color: #a4e6ff;
-        }
+.experiment-preview .experiment-desc {
+  width: 256px;
+  text-align: left;
+}
 
-        .experiment-preview .experiment-desc {
-            width: 256px;
-            text-align: left;
-        }
+.clear {
+  clear: both;
+}
 
-        #featured-experiments .experiment-preview {
-        }
+main {
+  padding: 2%;
+}
 
-        .clear {
-            clear: both;
-        }
+main .heading {
+  text-align: inherit;
+  font-weight: bold;
+  margin: 10px;
+}
 
-
-        main {
-            padding: 2%;
-        }
-
-        main .heading {
-            font-weight: bold;
-            font-style: italic;
-            margin-bottom: 10px;
-        }
-    
-        @media all and (max-width: 520px) {
-            #container {
-                width: 100vw;
-            }
-            .header-logo {
-                display: none;
-            }
-        }
+@media all and (max-width: 520px) {
+  #container {
+    width: 100vw;
+  }
+  .header-logo {
+    display: none;
+  }
+}
