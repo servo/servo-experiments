@@ -1,70 +1,70 @@
 function createClassTogglingDivs(container, classes) {
-	var elementFactories = [
-		{ title: 'div', func: getDiv },
-		{ title: 'iframe', func: getIframe }
-	];
-	var delayInc = 200;
-	var interval = 2000;
-	
-	elementFactories.forEach((factory) => {
-		var section = getSection(factory.title);
-		container.appendChild(section);
+    var elementFactories = [
+        { title: 'div', func: getDiv },
+        { title: 'iframe', func: getIframe },
+    ]
+    var delayInc = 200
+    var interval = 2000
 
-		for(var i = 0; i < classes.length; i++) {
-			var c = classes[i];
+    elementFactories.forEach(factory => {
+        var section = getSection(factory.title)
+        container.appendChild(section)
 
-			var wrapper = makeWrapper(c);
-			var el = factory.func();
+        for (var i = 0; i < classes.length; i++) {
+            var c = classes[i]
 
-			wrapper.appendChild(el);
-			section.appendChild(wrapper);
+            var wrapper = makeWrapper(c)
+            var el = factory.func()
 
-			el.classList.add('transitions');
+            wrapper.appendChild(el)
+            section.appendChild(wrapper)
 
-			scheduleToggling(el, c, i * delayInc, interval);
-		}
-	});
+            el.classList.add('transitions')
 
-	function scheduleToggling(el, c, delay, interval) {
-		setTimeout(function() {
-			setInterval(function() {
-				el.classList.toggle(c);
-			}, interval);
-		}, delay);
-	}
+            scheduleToggling(el, c, i * delayInc, interval)
+        }
+    })
 
-	function makeWrapper(title) {
-		var el = document.createElement('div');
-		el.className = 'wrapper';
+    function scheduleToggling(el, c, delay, interval) {
+        setTimeout(function () {
+            setInterval(function () {
+                el.classList.toggle(c)
+            }, interval)
+        }, delay)
+    }
 
-		var header = document.createElement('h3');
-		header.innerHTML = title;
+    function makeWrapper(title) {
+        var el = document.createElement('div')
+        el.className = 'wrapper'
 
-		el.appendChild(header);
+        var header = document.createElement('h3')
+        header.innerHTML = title
 
-		return el;
-	}
+        el.appendChild(header)
 
-	function getSection(title) {
-		var section = document.createElement('section');
-		var header = document.createElement('h2');
-		header.innerHTML = 'Transforming <tt>' + title + '</tt>s';
-		section.appendChild(header);
+        return el
+    }
 
-		return section;
-	}
+    function getSection(title) {
+        var section = document.createElement('section')
+        var header = document.createElement('h2')
+        header.innerHTML = 'Transforming <tt>' + title + '</tt>s'
+        section.appendChild(header)
 
-	function getDiv() {
-		var el = document.createElement('div');
-		var img = document.createElement('img');
-		img.src = '../../images/servo.png';
-		el.appendChild(img);
-		return el;
-	}
+        return section
+    }
 
-	function getIframe() {
-		var el = document.createElement('iframe');
-		el.src = 'iframe.html';
-		return el;
-	}
+    function getDiv() {
+        var el = document.createElement('div')
+        var img = document.createElement('img')
+        img.src = '../../images/servo.png'
+        el.appendChild(img)
+        return el
+    }
+
+    function getIframe() {
+        var el = document.createElement('iframe')
+        el.src = 'iframe.html'
+        return el
+    }
 }
