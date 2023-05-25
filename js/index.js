@@ -1,7 +1,7 @@
 function Http() {}
 
 Http.get = function (url, cb) {
-    var req = new XMLHttpRequest()
+    let req = new XMLHttpRequest()
     req.responseType = 'json'
     req.addEventListener('load', function (evt) {
         cb(req.response)
@@ -24,31 +24,31 @@ window.addEventListener('load', function () {
         )
     })
 
-    var tagWrap = function (tagName, el) {
-        var tagEl = document.createElement(tagName)
+    let tagWrap = function (tagName, el) {
+        let tagEl = document.createElement(tagName)
         tagEl.appendChild(el)
         return tagEl
     }
 
-    var hrefWrap = function (el, href) {
-        var a = tagWrap('a', el)
+    let hrefWrap = function (el, href) {
+        let a = tagWrap('a', el)
         a.href = href
         return a
     }
 
-    var pWrap = tagWrap.bind(null, 'p')
-    var experimentsPerRow = 3
+    let pWrap = tagWrap.bind(null, 'p')
+    let experimentsPerRow = 3
 
     function addExperiments(ul, experiments, showDesc) {
-        var lis = experiments.map(function (info, i) {
-            var article = document.createElement('article')
+        let lis = experiments.map(function (info, i) {
+            let article = document.createElement('article')
             article.classList.add('experiment-preview')
 
-            var h2 = document.createElement('h2')
+            let h2 = document.createElement('h2')
             h2.textContent = info.name
             article.appendChild(hrefWrap(h2, info.href))
 
-            var screen = document.createElement('img')
+            let screen = document.createElement('img')
             screen.src = info.href + 'thumb.png'
             screen.width = 256
             screen.height = 256
@@ -59,16 +59,38 @@ window.addEventListener('load', function () {
             }
 
             if (showDesc) {
-                var desc = document.createElement('div')
+                let desc = document.createElement('div')
                 desc.classList.add('experiment-desc')
-                if (info.desc.indexOf('<p>') === -1) {
-                    // No p tag detected, insert one.
-                    desc.appendChild(pWrap(document.createTextNode(info.desc)))
-                } else {
-                    // Otherwise just use HTML provided.
-                    desc.innerHTML = info.desc
-                }
-                article.appendChild(hrefWrap(desc, info.href))
+
+                let originalDesc = document.createElement('div')
+                originalDesc.innerHTML = info.desc
+                desc.appendChild(originalDesc)
+
+                let long_description = document.createElement('div')
+                long_description.innerHTML = info.long_description
+                long_description.style.display = 'none'
+                desc.appendChild(long_description)
+
+                let toggleButton = document.createElement('a');
+                toggleButton.textContent = 'Read More';
+                toggleButton.classList.add('toggle-button');
+                toggleButton.style.display = 'block';
+                toggleButton.style.marginTop = '10px';
+                toggleButton.style.color = 'blue';
+                toggleButton.style.cursor = 'pointer';
+                desc.appendChild(toggleButton);
+
+                toggleButton.addEventListener('click', function () {
+                  if (long_description.style.display === 'none') {
+                    long_description.style.display = 'block';
+                    toggleButton.textContent = 'Read Less';
+                  } else {
+                    long_description.style.display = 'none';
+                    toggleButton.textContent = 'Read More';
+                  }
+                });
+          
+                article.appendChild(desc);
             }
 
             return article

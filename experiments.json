@@ -5,7 +5,7 @@
             "name": "DIVMosaics",
             "desc": "<p>Mosaic effect using DIV's</p>",
             "href": "experiments/divMosaics/",
-            "long_description":"<p>Displays images in a mosaic effect using multiple DIV's as the mosaic tiles.  Each mosaic tile is animated using transtions on the top and left properties.</p><p>The mosaic effect shows Servo's ability to deal with many DOM elements aswell as their transitions.  The transitions in particular perform very well in Servo thanks to the hardware acceleration provided by Servo's rendering engine, WebRender.</p>"
+            "long_description":"Displays images in a mosaic effect using multiple DIV's as the mosaic tiles.  Each mosaic tile is animated using transtions on the top and left properties.</p><p>The mosaic effect shows Servo's ability to deal with many DOM elements aswell as their transitions.  The transitions in particular perform very well in Servo thanks to the hardware acceleration provided by Servo's rendering engine, WebRender.</p>"
         },
         {
             "name": "Mosaic Gallery",
