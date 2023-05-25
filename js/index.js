@@ -62,31 +62,31 @@ window.addEventListener('load', function () {
                 let desc = document.createElement('div')
                 desc.classList.add('experiment-desc')
 
-                let originalDesc = document.createElement('div')
-                originalDesc.innerHTML = info.desc
-                desc.appendChild(originalDesc)
+                let short_description = document.createElement('div')
+                short_description.innerHTML = info.desc
+                desc.appendChild(short_description)
 
                 let long_description = document.createElement('div')
                 long_description.innerHTML = info.long_description
                 long_description.style.display = 'none'
                 desc.appendChild(long_description)
 
-                let toggleButton = document.createElement('a');
-                toggleButton.textContent = 'Read More';
-                toggleButton.classList.add('toggle-button');
-                toggleButton.style.display = 'block';
-                toggleButton.style.marginTop = '10px';
-                toggleButton.style.color = 'blue';
-                toggleButton.style.cursor = 'pointer';
-                desc.appendChild(toggleButton);
+                let toggle = document.createElement('a');
+                toggle.textContent = 'Read More';
+                toggle.classList.add('toggle-button');
+                toggle.style.display = 'block';
+                toggle.style.marginTop = '10px';
+                toggle.style.color = 'blue';
+                toggle.style.cursor = 'pointer';
+                desc.appendChild(toggle);
 
-                toggleButton.addEventListener('click', function () {
+                toggle.addEventListener('click', function () {
                   if (long_description.style.display === 'none') {
                     long_description.style.display = 'block';
-                    toggleButton.textContent = 'Read Less';
+                    toggle.textContent = 'Read Less';
                   } else {
                     long_description.style.display = 'none';
-                    toggleButton.textContent = 'Read More';
+                    toggle.textContent = 'Read More';
                   }
                 });
           
