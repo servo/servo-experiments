@@ -83,6 +83,7 @@ h6 {
   text-align: center;
   box-shadow: 3px 3px 5px #7c7c7c;
   background-color: #dceff6;
+  vertical-align: top;
 }
 
 .experiment-preview a {
