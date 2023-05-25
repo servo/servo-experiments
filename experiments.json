@@ -31,7 +31,7 @@
             "name": "Dogemania Benchmark",
             "desc": "<p>Benchmark your browser with Doges.</p>",
             "href": "experiments/dogemania/",
-            "long_description":"This experiment provides a visual representation of the browser's activity through the servo-logo image and measures the performance using the FPS count."
+            "long_description":"<p>This experiment provides a visual representation of the browser's activity through the servo-logo image and measures the performance using the FPS count.</p>You can benchmark your browser with servo-doges <p></p>"
         }
     ]
 
