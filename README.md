@@ -3,12 +3,10 @@
 These demos aim to show off Servo's capabilities.
 
 ## Running Servo
-* The easiest way to run Servo is to get [Servo nightly](http://download.servo.org).
-* Alternately, follow the [guide](https://github.com/servo/servo#readme) to run servo locally
-
+* Follow the [guide](https://github.com/servo/servo#readme) to run servo locally
 
 ## Running experiment locally
-If running from source we recommend using <br />
+After setting up servo locally, you can run follwing commands <br />
 `./mach run -r -w [URL]` <br />
 The `-r` specifies to use the version compiled for release and the `-w` enables WebRender.
 <br /><br />
