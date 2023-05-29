@@ -32,6 +32,12 @@
             "desc": "<p>Benchmark your browser with Doges.</p>",
             "href": "experiments/dogemania/",
             "long_description":""
+        },
+        {
+            "name": "TWGL-Tunnel",
+            "desc": "<p>TWGL.</p>",
+            "href": "experiments/twgl-tunnel/",
+            "long_description":""
         }
     ]
 
