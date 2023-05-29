@@ -1,29 +1,28 @@
 {
     "experiments": [
-
         {
             "name": "DIVMosaics",
             "desc": "<p>Mosaic effect using DIV's</p>",
             "href": "experiments/divMosaics/",
-            "long_description":"<p>In this experiment each mosaic tile is animated using transtions on the top and left properties.</p><p>The mosaic effect shows Servo's ability to deal with many DOM elements aswell as their transitions.  The transitions in particular perform very well in Servo thanks to the hardware acceleration provided by Servo's rendering engine, WebRender.</p>"
+            "long_description": "<p>In this experiment each mosaic tile is animated using transtions on the top and left properties.</p><p>The mosaic effect shows Servo's ability to deal with many DOM elements aswell as their transitions.  The transitions in particular perform very well in Servo thanks to the hardware acceleration provided by Servo's rendering engine, WebRender.</p>"
         },
         {
             "name": "Mosaic Gallery",
             "desc": "<p>A gallery of generated DIV mosaics.  ",
             "href": "experiments/tiles/",
-            "long_description":"<p>This experiment features a gallery of generated DIV mosaics, where each pixel is represented by a static position and has transitions on their background color property. </p><p>On the page, the mosaic gallery is created by dividing the image into smaller units (pixels) represented by individual DIV elements. Each DIV element is positioned statically to form a mosaic-like grid.</p>"
+            "long_description": "<p>This experiment features a gallery of generated DIV mosaics, where each pixel is represented by a static position and has transitions on their background color property. </p><p>On the page, the mosaic gallery is created by dividing the image into smaller units (pixels) represented by individual DIV elements. Each DIV element is positioned statically to form a mosaic-like grid.</p>"
         },
         {
             "name": "DIV Rain",
             "desc": "<p>Animated rain effect using DIVs.</p>",
             "href": "experiments/swirly/",
-            "long_description":"<p>This experiment demonstrates an animated rain effect using HTML div elements. This experiment specifically focuses on testing the rendering and animation capabilities of Servo by creating a rain effect using CSS and HTML. </p><p> It provides a visually interactive demonstration of how Servo handles complex animations and effects in a web browser context.</p>"
+            "long_description": "<p>This experiment demonstrates an animated rain effect using HTML div elements. This experiment specifically focuses on testing the rendering and animation capabilities of Servo by creating a rain effect using CSS and HTML. </p><p> It provides a visually interactive demonstration of how Servo handles complex animations and effects in a web browser context.</p>"
         },
         {
             "name": "DIV Waves",
             "desc": "<p>Animated wave effect using DIVs.</p>",
             "href": "experiments/divWaves/",
-            "long_description":"This experiment specifically focuses on testing the rendering and animation capabilities of Servo by creating a visually dynamic and colorful wave effect. The wave animation is achieved by manipulating the position, size, and color of the HTML <div> elements. </p><p> This experiment helps evaluating and showcasing its ability to handle and render complex visual effects in a performant manner."
+            "long_description": "This experiment specifically focuses on testing the rendering and animation capabilities of Servo by creating a visually dynamic and colorful wave effect. The wave animation is achieved by manipulating the position, size, and color of the HTML <div> elements. </p><p> This experiment helps evaluating and showcasing its ability to handle and render complex visual effects in a performant manner."
         }
     ],
     "tests": [
@@ -31,14 +30,13 @@
             "name": "Dogemania Benchmark",
             "desc": "<p>Benchmark your browser with Doges.</p>",
             "href": "experiments/dogemania/",
-            "long_description":"<p>This experiment provides a visual representation of the browser's activity through the servo-logo image and measures the performance using the FPS count.</p>You can benchmark your browser with servo-doges <p></p>"
+            "long_description": "<p>This experiment provides a visual representation of the browser's activity through the servo-logo image and measures the performance using the FPS count.</p>You can benchmark your browser with servo-doges <p></p>"
         },
         {
             "name": "TWGL Tunnel",
             "desc": "<p>Tunnel effect using WebGL and the TWGL library.</p>",
             "href": "experiments/twgl-tunnel/",
-            "long_description":"<p>This experiment demonstrates the WebGL capabilities of servo. The tunnel effect is created by manipulating vertices and applying transformations to create the illusion of depth and movement. </p><p> The demo serves as a demonstration of WebGL capabilities and showcases dynamic and interactive 3D graphics using TWGL</p>"
+            "long_description": "<p>This experiment demonstrates the WebGL capabilities of servo. The tunnel effect is created by manipulating vertices and applying transformations to create the illusion of depth and movement. </p><p> The demo serves as a demonstration of WebGL capabilities and showcases dynamic and interactive 3D graphics using TWGL</p>"
         }
     ]
-
 }
