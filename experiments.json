@@ -35,7 +35,7 @@
         },
         {
             "name": "TWGL-Tunnel",
-            "desc": "<p>TWGL.</p>",
+            "desc": "<p>Showing WebGL Capabilites of servo</p>",
             "href": "experiments/twgl-tunnel/",
             "long_description":""
         }
