@@ -8,6 +8,7 @@ function init() {
             'images/banksy2.jpg', // List of images that can be selected to be mosaic-ified
             'images/bars.jpg',
             'images/servo-doge.png',
+            'images/servo.png',
             'images/firefox.png',
             'images/chrome.jpg',
             'images/sunset.jpg',
