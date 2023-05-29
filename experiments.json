@@ -34,10 +34,10 @@
             "long_description":"<p>This experiment provides a visual representation of the browser's activity through the servo-logo image and measures the performance using the FPS count.</p>You can benchmark your browser with servo-doges <p></p>"
         },
         {
-            "name": "TWGL-Tunnel",
-            "desc": "<p>Showing WebGL Capabilites of servo</p>",
+            "name": "TWGL Tunnel",
+            "desc": "<p>Tunnel effect using WebGL and the TWGL library.</p>",
             "href": "experiments/twgl-tunnel/",
-            "long_description":""
+            "long_description":"<p>This experiment demonstrates the WebGL capabilities of servo. The tunnel effect is created by manipulating vertices and applying transformations to create the illusion of depth and movement. </p><p> The demo serves as a demonstration of WebGL capabilities and showcases dynamic and interactive 3D graphics using TWGL</p>"
         }
     ]
 
