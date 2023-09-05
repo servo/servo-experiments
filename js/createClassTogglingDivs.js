@@ -1,7 +1,9 @@
 function createClassTogglingDivs(container, classes) {
     var elementFactories = [
-        { title: 'div', func: getDiv },
-        { title: 'iframe', func: getIframe },
+        { title: 'div', func: getDiv }
+
+        // TODO: enable it once we have better support for iframe
+        // { title: 'iframe', func: getIframe },
     ]
     var delayInc = 200
     var interval = 2000
