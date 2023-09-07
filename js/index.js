@@ -66,30 +66,33 @@ window.addEventListener('load', function () {
                 short_description.innerHTML = info.desc
                 desc.appendChild(short_description)
 
-                let long_description = document.createElement('div')
-                long_description.innerHTML = info.long_description
-                long_description.style.display = 'none'
-                desc.appendChild(long_description)
+                let long_decs = info.long_description;
+                if(long_decs !== "") {
+                    let long_description = document.createElement('div')
+                    long_description.innerHTML = long_decs;
+                    long_description.style.display = 'none'
+                    desc.appendChild(long_description)
 
-                let toggle = document.createElement('a');
-                toggle.textContent = 'Read More';
-                toggle.classList.add('toggle-button');
-                toggle.style.display = 'block';
-                toggle.style.marginTop = '10px';
-                toggle.style.color = 'blue';
-                toggle.style.cursor = 'pointer';
-                desc.appendChild(toggle);
-
-                toggle.addEventListener('click', function () {
-                  if (long_description.style.display === 'none') {
-                    long_description.style.display = 'block';
-                    toggle.textContent = 'Read Less';
-                  } else {
-                    long_description.style.display = 'none';
+                    let toggle = document.createElement('a');
                     toggle.textContent = 'Read More';
-                  }
-                });
-          
+                    toggle.classList.add('toggle-button');
+                    toggle.style.display = 'block';
+                    toggle.style.marginTop = '10px';
+                    toggle.style.color = 'blue';
+                    toggle.style.cursor = 'pointer';
+                    desc.appendChild(toggle);
+
+                    toggle.addEventListener('click', function () {
+                    if (long_description.style.display === 'none') {
+                        long_description.style.display = 'block';
+                        toggle.textContent = 'Read Less';
+                    } else {
+                        long_description.style.display = 'none';
+                        toggle.textContent = 'Read More';
+                    }
+                    });
+                }
+
                 article.appendChild(desc);
             }
 
