@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel=stylesheet type=text/css href=photos.css></link>
+<style id=photo-styles></style>
+<meta name="viewport" content="width=device-width">
+</head>
+<body>
+<footer>
+    <div class=footer-box id=zoom-container>
+        <div class="zoom-icon before"></div>
+        <div id=zoom-slider data-value=240><div id=zoom-knob style="left: 80px;"></div></div>
+        <div class="zoom-icon after"></div>
+    </div>
+</footer>
+<main></main>
+<script>
+// xorshift
+function Rand() {
+    this.x = 3141;
+    this.y = 5926;
+    this.z = 5358;
+    this.w = 9793;
+    return this;
+}
+
+Rand.prototype.rand = function() {
+    var t = this.x ^ (this.x << 11);
+    this.x = this.y; this.y = this.z; this.z = this.w;
+    this.w = this.w ^ (this.w >> 19) ^ t ^ (t >> 8);
+    return this.w;
+}
+
+var MAX_PHOTO = 20;
+var PHOTO_COUNT = 300;
+var MAX_ZOOM = 500;
+
+function zoom() {
+    var width = +document.getElementById('zoom-slider').getAttribute('data-value');
+    var height = width * 3 / 4;
+    var main = document.getElementsByTagName('main')[0];
+    for (var element = main.firstChild; element != null; element = element.nextSibling) {
+        element.setAttribute('class', "photo photo-size-" + width);
+    }
+}
+
+function reload() {
+    var rng = new Rand();
+    var string = "";
+    var photoCount = PHOTO_COUNT;
+    for (var i = 0; i < photoCount; i += 1000) {
+        for (var j = i; j < Math.min(photoCount, j + 1000); j++) {
+            var photoId = rng.rand() % MAX_PHOTO;
+            var photo = "photo" + (photoId + 1) + ".jpg";
+            string += "<div class=photo data-photo=\"" + photo + "\" " +
+                "style='background-image: url(" + photo + ")'></div>";
+        }
+    }
+    console.log(string);
+    document.getElementsByTagName("main")[0].innerHTML = string;
+    zoom();
+}
+
+function onKeyDown(event) {
+    var zoomSlider = document.getElementById('zoom-slider');
+    switch (event.keyCode) {
+    case 83:
+        // 's'
+        zoomSlider.setAttribute('data-value', +zoomSlider.getAttribute('data-value') + 40);
+        zoom();
+        break;
+    case 65:
+        // 'a'
+        zoomSlider.setAttribute('data-value', +zoomSlider.getAttribute('data-value') - 40);
+        zoom();
+        break;
+    }
+}
+
+function initPhotoStyles() {
+    var css = "";
+    for (var i = 0; i <= MAX_ZOOM; i++) {
+        var height = i * 3 / 4;
+        css += ".photo-size-" + i + " { width: " + i + "px; height: " + height +
+            "px; }";
+    }
+    document.getElementById('photo-styles').innerHTML = css;
+}
+
+var sliding = null;
+function startSliding(event) {
+    console.log("mousedown");
+    sliding = event.screenX;
+}
+
+function stopSliding(event) {
+    sliding = null;
+}
+
+function slide(event) {
+    var zoomSlider = document.getElementById('zoom-slider');
+    var clientX = event.clientX;
+    var element = zoomSlider;
+    var width = zoomSlider.clientWidth;
+    while (element != null) {
+        if (element.offsetLeft)
+            clientX -= element.offsetLeft;
+        element = element.parentNode;
+    }
+    console.log("mousemove " + clientX);
+    var newValue = (clientX / width * MAX_ZOOM) | 0;
+    document.getElementById('zoom-knob').setAttribute('style', "left: " + clientX + "px");
+    zoomSlider.setAttribute('data-value', newValue);
+    zoom();
+}
+
+var zoomSlider = document.getElementById('zoom-slider');
+/*zoomKnob.addEventListener('mousedown', startSliding, false);
+zoomKnob.addEventListener('mouseup', stopSliding, false);
+zoomSlider.addEventListener('click', startSliding, false);*/
+zoomSlider.addEventListener('mousemove', slide, false);
+
+zoomSlider.addEventListener('touchstart', function(ev) {
+  startSliding(ev.changedTouches[0]);
+  ev.preventDefault();
+}, false);
+
+zoomSlider.addEventListener('touchmove', function(ev) {
+  slide(ev.changedTouches[0]);
+}, false);
+
+zoomSlider.addEventListener('touchend', function(ev) {
+  stopSliding(ev.changedTouches[0]);
+  ev.preventDefault();
+}, false);
+
+
+/*
+var lastFrameTime = Date.now();
+function makeALittleBigger() {
+    var zoomSlider = document.getElementById('zoom-slider');
+    if (+zoomSlider.value >= 500)
+        return;
+    var thisFrameTime = Date.now();
+    var valueIncrement = ((thisFrameTime - lastFrameTime) / 100) | 0;
+    if (valueIncrement > 0) {
+    var valueIncrement = 1;
+        zoomSlider.value = +zoomSlider.value + valueIncrement;
+        zoom();
+        //lastFrameTime = thisFrameTime;
+        console.log(zoomSlider.value);
+    //}
+    setTimeout(makeALittleBigger, 16);
+}
+*/
+
+document.addEventListener('keydown', onKeyDown, true);
+
+document.getElementById('zoom-slider').setAttribute('data-value', 240);
+
+initPhotoStyles();
+reload();
+
+//setTimeout(makeALittleBigger, 16);
+
+</script>
+</body>
+</html>
+

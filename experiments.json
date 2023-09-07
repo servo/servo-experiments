@@ -23,6 +23,12 @@
             "desc": "<p>Animated wave effect using DIVs.</p>",
             "href": "experiments/divWaves/",
             "long_description": "This experiment specifically focuses on testing the rendering and animation capabilities of Servo by creating a visually dynamic and colorful wave effect. The wave animation is achieved by manipulating the position, size, and color of the HTML <div> elements. </p><p> This experiment helps evaluating and showcasing its ability to handle and render complex visual effects in a performant manner."
+        },
+        {
+            "name": "Photo Gallery",
+            "desc": "<p>Photo gallery with zoom option</p>",
+            "href": "experiments/photo-gallery/",
+            "long_description": ""
         }
     ],
     "tests": [
