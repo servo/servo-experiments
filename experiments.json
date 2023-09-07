@@ -33,10 +33,22 @@
             "long_description": "<p>This experiment provides a visual representation of the browser's activity through the servo-logo image and measures the performance using the FPS count.</p>You can benchmark your browser with servo-doges <p></p>"
         },
         {
+            "name": "CSS Transformations",
+            "desc": "<p>Test CSS transformations support in Servo.</p>",
+            "href": "experiments/test-transformations/",
+            "long_description": ""
+        },
+        {
             "name": "TWGL Tunnel",
             "desc": "<p>Tunnel effect(TWGL). ⚠️  Trippy visuals, potential epilepsy triggers.</p>",
             "href": "experiments/twgl-tunnel/",
             "long_description": "<p>This experiment demonstrates the WebGL capabilities of servo. The tunnel effect is created by manipulating vertices and applying transformations to create the illusion of depth and movement. </p><p> The demo serves as a demonstration of WebGL capabilities and showcases dynamic and interactive 3D graphics using TWGL</p>"
+        },
+        {
+            "name": "CSS Filters",
+            "desc": "<p>Testing CSS filters support in Servo.</p>",
+            "href": "experiments/test-filters/",
+            "long_description": ""
         }
     ]
 }
