@@ -105,10 +105,4 @@ window.addEventListener('load', function () {
         })
     }
 
-    requestAnimationFrame(animate)
-    function animate(t) {
-        requestAnimationFrame(animate)
-
-        TWEEN.update(t)
-    }
 })
