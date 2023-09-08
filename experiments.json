@@ -29,6 +29,12 @@
             "desc": "<p>Photo gallery with zoom option</p>",
             "href": "experiments/photo-gallery/",
             "long_description": ""
+        },
+        {
+            "name": "Physics Particles",
+            "desc": "<p>Physics Particles movements.</p>",
+            "href": "experiments/physicsParticles/",
+            "long_description": ""
         }
     ],
     "tests": [
