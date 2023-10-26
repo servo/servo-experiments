@@ -46,3 +46,5 @@ and the following JSON would be added to `experiments.json`:
   ```
 
 ## Code of Conduct
+
+Servo Code of Conduct is published at <https://servo.org/coc/>.
