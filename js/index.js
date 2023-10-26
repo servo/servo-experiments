@@ -22,6 +22,11 @@ window.addEventListener('load', function () {
             data.tests,
             true
         )
+        addExperiments(
+            document.querySelector('#videos .experiment-previews'),
+            data.videos,
+            true
+        )
     })
 
     let tagWrap = function (tagName, el) {
@@ -46,13 +51,21 @@ window.addEventListener('load', function () {
 
             let h2 = document.createElement('h2')
             h2.textContent = info.name
-            article.appendChild(hrefWrap(h2, info.href))
+            if (info.href) {
+              article.appendChild(hrefWrap(h2, info.href))
 
-            let screen = document.createElement('img')
-            screen.src = info.href + 'thumb.png'
-            screen.width = 256
-            screen.height = 256
-            article.appendChild(hrefWrap(screen, info.href))
+              let screen = document.createElement('img')
+              screen.src = info.href + 'thumb.png'
+              screen.width = 256
+              screen.height = 256
+              article.appendChild(hrefWrap(screen, info.href))
+            } else {
+              article.appendChild(hrefWrap(h2, "https://youtu.be/" + info.youtube_id))
+
+              let iframe = document.createElement('div')
+              iframe.innerHTML = '<iframe width="256" src="https://www.youtube.com/embed/' + info.youtube_id + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
+              article.appendChild(iframe)
+            }
 
             if (i % experimentsPerRow === 0) {
                 article.classList.add('clear')
