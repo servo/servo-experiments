@@ -62,5 +62,25 @@
             "href": "experiments/test-transformations/",
             "long_description": ""
         }
+    ],
+    "videos": [
+        {
+            "name": "Servo Demos",
+            "desc": "<p>Servo running differt examples including WebGL and WebGPU.</p>",
+            "youtube_id": "jB5tpBzO-jg",
+            "long_description": "<p>In this video you can see Servo running different examples on a GNU/Linux laptop, those examples include Wikipedia, CSS animations, WebGL and WebGPU. This is a Servo build from mid-September 2023.</p>"
+        },
+        {
+            "name": "Servo On Raspberry Pi",
+            "desc": "<p>Servo running on Raspberry Pi including a comparison with Chromium.</p>",
+            "youtube_id": "oDqDrvxLxyI",
+            "long_description": "<p>In this video you can see Servo running different examples on a Raspberry Pi 400, those examples include Wikipedia, CSS animations and WebGL. This is a Servo build from mid-September 2023.</p>"
+        },
+        {
+            "name": "Servo Description",
+            "desc": "<p>Slideshow explaining what the Servo project is and its capabilities.</p>",
+            "youtube_id": "bRFl93QrBAk",
+            "long_description": "<p>In this video you can see a slideshow about Servo explaining what's the project, why you should use it, the main use cases and a bit about the project history.</p>"
+        }
     ]
 }
