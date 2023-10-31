@@ -66,7 +66,7 @@
     "videos": [
         {
             "name": "Servo Demos",
-            "desc": "<p>Servo running differt examples including WebGL and WebGPU.</p>",
+            "desc": "<p>Servo running different examples including WebGL and WebGPU.</p>",
             "youtube_id": "jB5tpBzO-jg",
             "long_description": "<p>In this video you can see Servo running different examples on a GNU/Linux laptop, those examples include Wikipedia, CSS animations, WebGL and WebGPU. This is a Servo build from mid-September 2023.</p>"
         },
