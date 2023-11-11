@@ -61,6 +61,12 @@
             "desc": "<p>Test CSS transformations support in Servo.</p>",
             "href": "experiments/test-transformations/",
             "long_description": ""
+        },
+        {
+            "name": "WebGPU: Game of Life",
+            "desc": "<p>Test WebGPU support in Servo.</p>",
+            "href": "experiments/webgpu-game-of-life/",
+            "long_description": "<p>WebGPU demo built in <a href=\"https://codelabs.developers.google.com/your-first-webgpu-app\">Your first WebGPU app</a></p>"
         }
     ],
     "videos": [
