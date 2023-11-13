@@ -66,7 +66,7 @@
             "name": "WebGPU: Game of Life",
             "desc": "<p>Test WebGPU support in Servo.</p>",
             "href": "experiments/webgpu-game-of-life/",
-            "long_description": "<p>WebGPU demo built in <a href=\"https://codelabs.developers.google.com/your-first-webgpu-app\">Your first WebGPU app</a></p>"
+            "long_description": "<p>Servo needs to be run with <code>--pref dom.webgpu.enabled</code></p>"
         }
     ],
     "videos": [
