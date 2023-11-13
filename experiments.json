@@ -61,6 +61,12 @@
             "desc": "<p>Test CSS transformations support in Servo.</p>",
             "href": "experiments/test-transformations/",
             "long_description": ""
+        },
+        {
+            "name": "WebGPU: Game of Life",
+            "desc": "<p>Test WebGPU support in Servo.</p>",
+            "href": "experiments/webgpu-game-of-life/",
+            "long_description": "<p>Servo needs to be run with <code>--pref dom.webgpu.enabled</code></p>"
         }
     ],
     "videos": [
