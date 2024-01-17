@@ -36,23 +36,23 @@ h6 {
   text-align: center;
 }
 
-.header-inner {
-  min-width: 320px;
-  max-width: 540px;
-  margin: auto;
+.nav {
+  overflow: hidden;
 }
 
-.header-logo {
+.nav a {
+  float: left;
   text-align: center;
-  margin-top: 0.2em;
+  font-weight: bold;
+  padding: 14px 10px;
+  text-decoration: none;
+  font-size: 18px;
 }
 
-.header-main {
-  font-size: 150%;
-}
-
-.header-tagline {
-  color: #696969;
+.nav-right {
+  float: right;
+  padding-top: 14px;
+  margin: 24px 20px 0 10px
 }
 
 .download-link a {
