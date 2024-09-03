@@ -1,121 +1,84 @@
-function Http() {}
-
-Http.get = function (url, cb) {
-    let req = new XMLHttpRequest()
-    req.responseType = 'json'
-    req.addEventListener('load', function (evt) {
-        cb(req.response)
-    })
-    req.open('GET', url)
-    req.send()
+function fetchJSON(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            callback(JSON.parse(xhr.responseText));
+        }
+    };
+    xhr.open('GET', url, true);
+    xhr.send();
 }
 
-window.addEventListener('load', function () {
-    Http.get('experiments.json', function (data) {
-        addExperiments(
-            document.querySelector('#other-experiments .experiment-previews'),
-            data.experiments,
-            true
-        )
-        addExperiments(
-            document.querySelector('#technical-tests .experiment-previews'),
-            data.tests,
-            true
-        )
-        addExperiments(
-            document.querySelector('#videos .experiment-previews'),
-            data.videos,
-            true
-        )
-    })
+function createExperimentElement(info) {
+    var article = document.createElement('article');
+    article.className = 'experiment-preview';
 
-    let tagWrap = function (tagName, el) {
-        let tagEl = document.createElement(tagName)
-        tagEl.appendChild(el)
-        return tagEl
+    var h2 = document.createElement('h2');
+    h2.textContent = info.name;
+
+    var link = document.createElement('a');
+    link.href = info.href || "https://youtu.be/" + info.youtube_id;
+    link.appendChild(h2);
+
+    article.appendChild(link);
+
+    var image = document.createElement('img');
+    if (info.href) {
+        image.src = info.href + 'thumb.png';
+    } else {
+        image.src = 'https://img.youtube.com/vi/' + info.youtube_id + '/0.jpg';
     }
+    image.width = 256;
+    image.height = 256;
+    link.appendChild(image);
 
-    let hrefWrap = function (el, href) {
-        let a = tagWrap('a', el)
-        a.href = href
-        return a
-    }
+    var desc = document.createElement('div');
+    desc.className = 'experiment-desc';
+    
+    var shortDesc = document.createElement('div');
+    shortDesc.innerHTML = info.desc;
+    desc.appendChild(shortDesc);
 
-    let pWrap = tagWrap.bind(null, 'p')
-    let experimentsPerRow = 3
+    if (info.long_description) {
+        var longDesc = document.createElement('div');
+        longDesc.innerHTML = info.long_description;
+        longDesc.style.display = 'none';
+        desc.appendChild(longDesc);
 
-    function addExperiments(ul, experiments, showDesc) {
-        let lis = experiments.map(function (info, i) {
-            let article = document.createElement('article')
-            article.classList.add('experiment-preview')
+        var toggle = document.createElement('a');
+        toggle.textContent = 'Read More';
+        toggle.style.display = 'block';
+        toggle.style.marginTop = '10px';
+        toggle.style.color = 'blue';
+        toggle.style.cursor = 'pointer';
+        desc.appendChild(toggle);
 
-            let h2 = document.createElement('h2')
-            h2.textContent = info.name
-            if (info.href) {
-              article.appendChild(hrefWrap(h2, info.href))
-
-              let screen = document.createElement('img')
-              screen.src = info.href + 'thumb.png'
-              screen.width = 256
-              screen.height = 256
-              article.appendChild(hrefWrap(screen, info.href))
+        toggle.onclick = function() {
+            if (longDesc.style.display === 'none') {
+                longDesc.style.display = 'block';
+                toggle.textContent = 'Read Less';
             } else {
-              article.appendChild(hrefWrap(h2, "https://youtu.be/" + info.youtube_id))
-
-              let iframe = document.createElement('div')
-              iframe.innerHTML = '<iframe width="256" src="https://www.youtube.com/embed/' + info.youtube_id + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
-              article.appendChild(iframe)
+                longDesc.style.display = 'none';
+                toggle.textContent = 'Read More';
             }
-
-            if (i % experimentsPerRow === 0) {
-                article.classList.add('clear')
-            }
-
-            if (showDesc) {
-                let desc = document.createElement('div')
-                desc.classList.add('experiment-desc')
-
-                let short_description = document.createElement('div')
-                short_description.innerHTML = info.desc
-                desc.appendChild(short_description)
-
-                let long_decs = info.long_description;
-                if(long_decs !== "") {
-                    let long_description = document.createElement('div')
-                    long_description.innerHTML = long_decs;
-                    long_description.style.display = 'none'
-                    desc.appendChild(long_description)
-
-                    let toggle = document.createElement('a');
-                    toggle.textContent = 'Read More';
-                    toggle.classList.add('toggle-button');
-                    toggle.style.display = 'block';
-                    toggle.style.marginTop = '10px';
-                    toggle.style.color = 'blue';
-                    toggle.style.cursor = 'pointer';
-                    desc.appendChild(toggle);
-
-                    toggle.addEventListener('click', function () {
-                    if (long_description.style.display === 'none') {
-                        long_description.style.display = 'block';
-                        toggle.textContent = 'Read Less';
-                    } else {
-                        long_description.style.display = 'none';
-                        toggle.textContent = 'Read More';
-                    }
-                    });
-                }
-
-                article.appendChild(desc);
-            }
-
-            return article
-        })
-
-        // Add the preview elements to dom
-        lis.forEach(function (li) {
-            ul.appendChild(li)
-        })
+        };
     }
 
-})
+    article.appendChild(desc);
+    return article;
+}
+
+function addExperiments(containerId, experiments) {
+    var container = document.getElementById(containerId);
+    experiments.forEach(function(experiment) {
+        container.appendChild(createExperimentElement(experiment));
+    });
+}
+
+window.onload = function() {
+    fetchJSON('experiments.json', function(data) {
+        addExperiments('other-experiments', data.experiments);
+        addExperiments('technical-tests', data.tests);
+        addExperiments('videos', data.videos);
+    });
+};
