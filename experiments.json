@@ -35,6 +35,18 @@
             "desc": "<p>Physics Particles movements.</p>",
             "href": "experiments/physicsParticles/",
             "long_description": ""
+        },
+        {
+            "name": "Iframes",
+            "desc": "<p>iframes Showcase</p>",
+            "href": "experiments/iframes/",
+            "long_description": "See how multiple iframes are rendered, how users can interact with the content inside them"
+        },
+        {
+            "name": "Cat Portal",
+            "desc": "<p>Test a portal-like interaction on Servo</p>",
+            "href": "experiments/portal/",
+            "long_description": ""
         }
     ],
     "tests": [
