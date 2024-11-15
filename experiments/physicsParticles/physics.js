@@ -103,7 +103,7 @@ on(containerEl, 'mouseup', function (event) {
   mouseRepulsion.setRadius(100 * RADIUS_SCALE);
 });
 
-loop(function (frames, currFrameT, prevFrameT, fps, averageFPS) {
+loop(function (frames, currFrameT, prevFrameT, fps, averageFPS, firstPercent) {
   // Skip every other frame and let CSS transitions do the tweening.
   if (frames % FRAMESKIP == 0) {
     // Advance physics simulation.
@@ -121,5 +121,5 @@ loop(function (frames, currFrameT, prevFrameT, fps, averageFPS) {
 
   // Calc delta between last and current frame start
   // + delta between frame start and frame end.
-  text(fpsEl, 'AVG FPS: ' + averageFPS + ' FPS: ' + fps);
+  text(fpsEl, '1% LOW: ' + firstPercent + ' AVG FPS: ' + averageFPS + ' FPS: ' + fps);
 });

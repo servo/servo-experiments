@@ -14,6 +14,8 @@ function loop(callback) {
   var frames = 0;
   // The sum of all frames per second.
   var fpsSum = 0;
+  // Histogram of fps
+  var fpsHisto = [];
   var prevT = now();
 
   function tick() {
@@ -23,7 +25,24 @@ function loop(callback) {
     avgFps = smooth(avgFps, fps, 0.03);
     frames = frames + 1;
     var avgFps = fpsSum / frames;
-    callback(frames, currT, prevT, Math.round(fps), Math.round(avgFps));
+    var roundFps = Math.round(fps);
+    if (fpsHisto[roundFps] == undefined) {
+      fpsHisto[roundFps]=0;
+    }
+    fpsHisto[roundFps] += 1;
+    var percentile = 0;
+    if (frames >= 100) {
+      var i = 0;
+      var prefixSum = 0;
+      while (prefixSum < frames / 100) {
+        if (fpsHisto[i] != undefined) {
+          prefixSum += fpsHisto[i];
+        }
+        i += 1;
+      }
+      percentile = i;
+    }
+    callback(frames, currT, prevT, Math.round(fps), Math.round(avgFps), percentile);
     prevT = currT;
     if (next) requestAnimationFrame(tick);
   };
