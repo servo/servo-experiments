@@ -83,6 +83,12 @@
     ],
     "videos": [
         {
+            "name": "Servo Demos (September 2024)",
+            "desc": "<p>Servo browsing different websites.</p>",
+            "youtube_id": "Hz6m1lH7rqc",
+            "long_description": "<p>This is a demo of Servo mini browser (servoshell) browsing the web and showing some new features that have been implemented recently on the project. This is Servo build from mid-September 2024.</p>"
+        },
+        {
             "name": "Servo Demos",
             "desc": "<p>Servo running different examples including WebGL and WebGPU.</p>",
             "youtube_id": "jB5tpBzO-jg",
